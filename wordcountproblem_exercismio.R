@@ -1,15 +1,15 @@
 word_count <- function(subtitle){
     j <- 1 # Variavel auxiliar para separar palavras
-    word_list <- c() # Lista das palavras
+    word_list <- c()
     for(i in 1:nchar(subtitle) - 1){
-        punctuation_logic = (substr(subtitle, i, i) %in%
+        punctuation_logic <- (substr(subtitle, i, i) %in%
         c(":", "!", "?", " ", "\"", ",", "\n", ".", "\t"))
 
         # Separacao inicial das palavras
         if(punctuation_logic){
             word_list <- c(word_list, c(substr(subtitle, j, i - 1)))
             j <- i + 1
-        }        
+        }
     }
     word_list <- c(word_list, c(substr(subtitle, j, i))) # Adicionando ultima palavra na lista
     word_list <- word_list[!(word_list %in% c(""))] # Removendo strings nulas
