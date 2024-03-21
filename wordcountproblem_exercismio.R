@@ -2,7 +2,7 @@ word_count <- function(subtitle){
     j <- 1 # Variavel auxiliar para separar palavras
     word_list <- c() # Lista das palavras
     for(i in 1:nchar(subtitle) - 1){
-        punctuation_logic = (substr(subtitle, i, i) %in%
+        punctuation_logic <- (substr(subtitle, i, i) %in%
         c(":", "!", "?", " ", "\"", ",", "\n", ".", "\t"))
 
         # Separacao inicial das palavras
